@@ -1,0 +1,54 @@
+﻿<Window x:Class="HW_WPF_290923.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HW_WPF_290923"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" Background="#FF607178">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Black" Opacity="0.5"/>
+            </Border.Effect>
+            <ScrollViewer>
+                <ScrollViewer.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Background" Value="#4B585E"/>
+                        <Setter Property="BorderBrush" Value="#4B585E"/>
+                    </Style>
+                </ScrollViewer.Resources>
+
+                <StackPanel Orientation="Vertical">
+                    <Expander Header="Изображения" IsExpanded="True" Background="#FF607178" Foreground="White">
+                        <StackPanel x:Name="ImagesStackPanel" Orientation="Vertical">
+                        </StackPanel>
+                    </Expander>
+                    <TreeView Name="treeView" Height="38">
+                        
+                        
+                    </TreeView>
+                    <Button Content="Добавть изображение" Height="25" Margin="10, 5, 10, 5" Background="#FF607178" BorderBrush="#FF4B585E" FontSize="9" Click="AddImageClick"/>
+                </StackPanel>
+                
+            </ScrollViewer>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="0" Background="#FF414D52">
+            <Border Margin="10, 5, 10, 5" Background="#FF607178" CornerRadius="20">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Image x:Name="imagePlace" Margin="10,10,10,10"/>
+            </Border>
+        </Border>
+    </Grid>
+</Window>
